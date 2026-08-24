@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr" style="background-color:#faf3e2 !important; color-scheme: light !important;">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light">
+<meta name="theme-color" content="#faf3e2">
+<title>Café Madras — Restaurant Franco-Indien, Ugine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#241a10;--saffron:#c9772e;--saffron-deep:#a35c1e;--maroon:#7a2a1e;--cream:#faf3e2;--cream-deep:#efe0c2;--white:#fffdf7;--line:rgba(36,26,16,0.13);}
+  *{margin:0;padding:0;box-sizing:border-box;forced-color-adjust:none;}
+  html{scroll-behavior:smooth;color-scheme:light;}
+  body{background-color:var(--cream) !important;color:var(--ink) !important;font-family:'Karla',sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;color-scheme:light;}
+  a{color:inherit;}
+  .eyebrow{font-weight:700;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--maroon);white-space:nowrap;}
+  h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:700;}
+  header.nav{position:sticky;top:0;z-index:50;background:var(--white);border-bottom:3px solid var(--saffron);}
+  .nav-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0.85rem 1.5rem;gap:1rem;}
+  .brand{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.5rem;white-space:nowrap;}
+  .brand span{color:var(--saffron-deep);font-style:italic;}
+  nav.links{display:flex;gap:1.1rem;overflow-x:auto;scrollbar-width:none;}
+  nav.links::-webkit-scrollbar{display:none;}
+  nav.links a{font-weight:600;font-size:0.68rem;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;color:#5c4c38;white-space:nowrap;}
+  .call-btn{font-weight:700;font-size:0.72rem;letter-spacing:0.04em;text-transform:uppercase;background:var(--maroon);color:var(--white);padding:0.55rem 0.9rem;text-decoration:none;white-space:nowrap;flex-shrink:0;}
+  .hero{background:var(--cream-deep);padding:4.5rem 1.5rem 4rem;text-align:center;}
+  .hero h1{font-size:clamp(2.8rem,7.5vw,5rem);line-height:1;}
+  .hero .tagline{font-family:'Karla',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--maroon);margin-top:0.6rem;}
+  .hero p.sub{font-size:1.02rem;max-width:32rem;margin:1.2rem auto 0;color:#4a3a28;}
+  .hero .meta{display:flex;flex-wrap:wrap;gap:0.5rem 1.1rem;justify-content:center;margin-top:1.8rem;font-weight:600;font-size:0.78rem;color:#5c4c38;}
+  .hero .meta span.dot::before{content:"·";margin:0 0.55rem;color:var(--saffron);}
+  .info-strip{max-width:1180px;margin:0 auto;background:var(--white);display:grid;grid-template-columns:repeat(4,1fr);box-shadow:0 16px 36px rgba(36,26,16,0.1);}
+  .info-strip .cell{padding:1.5rem 1.4rem;border-right:1px solid var(--line);}
+  .info-strip .cell:last-child{border-right:none;}
+  .info-strip .cell .eyebrow{display:block;margin-bottom:0.5rem;}
+  .info-strip .cell .val{font-weight:600;font-size:0.92rem;}
+  .info-strip .cell .val small{display:block;font-weight:400;color:#5c4c38;font-size:0.78rem;margin-top:0.15rem;}
+  section{max-width:1180px;margin:0 auto;padding:5rem 1.5rem;}
+  .section-head{display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;margin-bottom:2.4rem;padding-bottom:1.1rem;border-bottom:2px solid var(--ink);}
+  .section-head h2{font-size:clamp(2.1rem,4vw,3rem);}
+  .subhead{font-family:'Cormorant Garamond',serif;font-weight:700;font-style:italic;font-size:1.4rem;color:var(--maroon);margin:2.4rem 0 1rem;}
+  .subhead:first-child{margin-top:0;}
+  .dish-row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:0.75rem 0;border-bottom:1px dotted var(--line);}
+  .dish-row:last-child{border-bottom:none;}
+  .dish-row .name{font-weight:600;font-size:0.94rem;}
+  .dish-row .desc{display:block;font-weight:400;font-size:0.8rem;color:#5c4c38;margin-top:0.1rem;}
+  .dish-row .price{font-weight:700;font-size:0.9rem;color:var(--saffron-deep);white-space:nowrap;}
+  .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.5px;background:var(--line);border:1px solid var(--line);}
+  .card{background:var(--white);padding:1.5rem 1.3rem;display:flex;flex-direction:column;gap:0.4rem;}
+  .card .top{display:flex;justify-content:space-between;align-items:baseline;gap:0.8rem;}
+  .card h3{font-family:'Karla',sans-serif;font-weight:700;font-size:0.98rem;}
+  .card .price{font-weight:700;font-size:0.88rem;color:var(--saffron-deep);white-space:nowrap;}
+  .card p{font-size:0.82rem;color:#5c4c38;}
+  .note{font-size:0.85rem;color:#5c4c38;margin-top:1.2rem;border-left:3px solid var(--saffron);padding-left:0.9rem;}
+  footer{background:var(--cream-deep);color:#4a3a28;padding:3.6rem 1.5rem 2.2rem;border-top:3px solid var(--saffron);}
+  .foot-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:2.4rem;padding-bottom:2.2rem;border-bottom:1px solid var(--line);}
+  footer h3{color:var(--ink);font-size:1.9rem;margin-bottom:0.8rem;}
+  .foot-links a{display:block;text-decoration:none;font-size:0.9rem;padding:0.3rem 0;color:#4a3a28;}
+  .bottom-line{max-width:1180px;margin:1.4rem auto 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;font-size:0.68rem;color:#8a7860;}
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+  @media (max-width:760px){.info-strip{grid-template-columns:1fr 1fr;}.info-strip .cell:nth-child(2){border-right:none;}.info-strip .cell{border-bottom:1px solid var(--line);}section{padding:3.4rem 1.2rem;}.foot-inner{grid-template-columns:1fr;}}
+  @media (prefers-reduced-motion: reduce){.reveal{transition:none;opacity:1;transform:none;}}
+</style>
+</head>
+<body style="background-color:#faf3e2 !important; color:#241a10 !important;">
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand">Café <span>Madras</span></div>
+    <nav class="links">
+      <a href="#entrees">Entrées</a>
+      <a href="#plats">Plats</a>
+      <a href="#biryani">Biryanis</a>
+      <a href="#desserts">Desserts</a>
+    </nav>
+    <a class="call-btn" href="tel:0652568101">06 52 56 81 01</a>
+  </div>
+</header>
+
+<section class="hero">
+  <span class="eyebrow">Ugine · Cuisine Franco-Indienne & Tamoule</span>
+  <h1>Café Madras</h1>
+  <div class="tagline">Votre restaurant franco-indien à Ugine</div>
+  <p class="sub">Cuisine délicate et raffinée : plats du sud de l'Inde et du Tamil Eelam, biryanis, curry et kottu roti, dans un cadre inspiré d'un palais de maharadja.</p>
+  <div class="meta"><span>4,6 · 77 avis</span><span class="dot">777 Route d'Annecy</span></div>
+</section>
+
+<div class="info-strip reveal">
+  <div class="cell"><span class="eyebrow">Adresse</span><div class="val">777 Route d'Annecy<br><small>73400 Ugine</small></div></div>
+  <div class="cell"><span class="eyebrow">Horaires</span><div class="val">Tous les jours<br><small>11h30–14h30 · 18h–22h30</small></div></div>
+  <div class="cell"><span class="eyebrow">Téléphone</span><div class="val">06 52 56 81 01<br><small>Réservation conseillée</small></div></div>
+  <div class="cell"><span class="eyebrow">Avis</span><div class="val">4,6 / 5<br><small>77 avis Google</small></div></div>
+</div>
+
+<section id="entrees">
+  <div class="section-head reveal"><h2>Entrées</h2><span class="eyebrow">Naan & végétarien</span></div>
+  <div class="reveal">
+    <div class="dish-row"><div class="name">Rolls Agneau/Bœuf x2</div><span class="price">5,50 €</span></div>
+    <div class="dish-row"><div class="name">Samosa Poulet/Légume x2</div><span class="price">5,00 €</span></div>
+    <div class="dish-row"><div class="name">Chicken 65</div><span class="price">7,90 €</span></div>
+    <div class="dish-row"><div class="name">Crevette Tandoori</div><span class="price">16,50 €</span></div>
+  </div>
+  <div class="subhead">Nos Naan</div>
+  <div class="reveal">
+    <div class="dish-row"><div class="name">Naan Nature</div><span class="price">3,50 €</span></div>
+    <div class="dish-row"><div class="name">Naan Fromage</div><span class="price">3,90 €</span></div>
+    <div class="dish-row"><div class="name">Naan à l'Ail</div><span class="price">4,20 €</span></div>
+    <div class="dish-row"><div class="name">Naan Fromage et Oignon</div><span class="price">4,50 €</span></div>
+    <div class="dish-row"><div class="name">Naan Fromage et à l'Ail</div><span class="price">4,50 €</span></div>
+    <div class="dish-row"><div class="name">Naan Viande/Farcie</div><span class="price">4,70 €</span></div>
+  </div>
+  <div class="subhead">Entrées Végétariennes</div>
+  <div class="reveal">
+    <div class="dish-row"><div class="name">Appadam<span class="desc">Galette traditionnelle des Tamouls, à base de farine de lentilles</span></div><span class="price">4,00 €</span></div>
+    <div class="dish-row"><div class="name">Marakari Cool<span class="desc">Soupe aux légumes des Tamouls</span></div><span class="price">5,50 €</span></div>
+    <div class="dish-row"><div class="name">Raita<span class="desc">Base yaourt, concombre, tomate, carotte, fines herbes</span></div><span class="price">5,50 €</span></div>
+    <div class="dish-row"><div class="name">Palak Paneer<span class="desc">Curry d'épinards</span></div><span class="price">4,50 €</span></div>
+    <div class="dish-row"><div class="name">Baken Bakhta<span class="desc">Curry d'aubergines</span></div><span class="price">5,00 €</span></div>
+    <div class="dish-row"><div class="name">Dal Makhani<span class="desc">Curry de haricots</span></div><span class="price">5,00 €</span></div>
+    <div class="dish-row"><div class="name">Mix Pakora<span class="desc">Beignets de légumes indiens</span></div><span class="price">6,50 €</span></div>
+  </div>
+</section>
+
+<section id="plats">
+  <div class="section-head reveal"><h2>Plats Principaux</h2><span class="eyebrow">Curry, Madras & Karahi</span></div>
+  <div class="card-grid reveal">
+    <div class="card"><div class="top"><h3>Poulet Curry / Madras / Karahi</h3><span class="price">16,10 €</span></div></div>
+    <div class="card"><div class="top"><h3>Butter Chicken</h3><span class="price">16,50 €</span></div></div>
+    <div class="card"><div class="top"><h3>Poulet Tikka</h3><span class="price">16,10 €</span></div></div>
+    <div class="card"><div class="top"><h3>Poulet Tandoori</h3><span class="price">16,50 €</span></div><p>Mariné aux épices indiennes, grillé au four tandoor.</p></div>
+    <div class="card"><div class="top"><h3>Bœuf Curry / Madras</h3><span class="price">16,50 €</span></div></div>
+    <div class="card"><div class="top"><h3>Bœuf Karahi</h3><span class="price">16,90 €</span></div></div>
+    <div class="card"><div class="top"><h3>Crevette Curry / Madras</h3><span class="price">17,40 €</span></div></div>
+    <div class="card"><div class="top"><h3>Crevette Karahi</h3><span class="price">17,90 €</span></div></div>
+    <div class="card"><div class="top"><h3>Poisson Curry</h3><span class="price">16,90 €</span></div><p>Saumon ou barbet rouge.</p></div>
+    <div class="card"><div class="top"><h3>Grillade de Dorade</h3><span class="price">23,90 €</span></div></div>
+    <div class="card"><div class="top"><h3>Agneau (Curry/Madras/Karahi)</h3><span class="price">17,90 €</span></div></div>
+    <div class="card"><div class="top"><h3>Canard (Curry/Madras/Karahi)</h3><span class="price">19,90 €</span></div></div>
+    <div class="card"><div class="top"><h3>Gambas</h3><span class="price">24,90 €</span></div><p>Décortiquées, marinées aux épices, grillées au tandoori avec poivrons, tomates.</p></div>
+    <div class="card"><div class="top"><h3>Omelette Sri Lankaise</h3><span class="price">14,90 €</span></div><p>Épicée, mélange d'épices locales, herbes et oignons.</p></div>
+  </div>
+  <p class="note">Accompagnements possibles : riz basmati, ou naan nature, salade.</p>
+
+  <div class="subhead">Dosas & Parotta</div>
+  <div class="reveal">
+    <div class="dish-row"><div class="name">Dosa Normal x3<span class="desc">Servi avec sambar et chutney</span></div><span class="price">14,90 €</span></div>
+    <div class="dish-row"><div class="name">Dosa Masala x2<span class="desc">Farci aux pommes de terre au curry</span></div><span class="price">17,90 €</span></div>
+    <div class="dish-row"><div class="name">Parotta Curry Poulet (x3)</div><span class="price">14,90 €</span></div>
+    <div class="dish-row"><div class="name">Parotta Curry Bœuf (x3)</div><span class="price">15,90 €</span></div>
+    <div class="dish-row"><div class="name">Parotta Agneau (x3)</div><span class="price">16,90 €</span></div>
+  </div>
+
+  <div class="subhead">Salades & Sandwich</div>
+  <div class="reveal">
+    <div class="dish-row"><div class="name">Tikka Salade<span class="desc">Poulet mariné, salade, tomate, croûton, parmesan, œuf dur</span></div><span class="price">15,50 €</span></div>
+    <div class="dish-row"><div class="name">Salade Curry<span class="desc">Chicken tikka curry, salade, tomate, croûton, parmesan, œuf dur</span></div><span class="price">15,90 €</span></div>
+    <div class="dish-row"><div class="name">Salade de Thon Dalle</div><span class="price">15,50 €</span></div>
+    <div class="dish-row"><div class="name">Salade César</div><span class="price">15,50 €</span></div>
+    <div class="dish-row"><div class="name">Keefta Bœuf Kebab</div><span class="price">9,50 €</span></div>
+    <div class="dish-row"><div class="name">Seekh Kebab</div><span class="price">8,90 €</span></div>
+    <div class="dish-row"><div class="name">Curry Mix<span class="desc">Seekh kebab + chicken tikka curry</span></div><span class="price">10,50 €</span></div>
+    <div class="dish-row"><div class="name">Tandoori Mix<span class="desc">Seekh kebab + chicken tandoori</span></div><span class="price">11,50 €</span></div>
+  </div>
+  <p class="note">Accompagnement : crudités + frites + boisson gazeuse 33cl. Supplément fromage : 0,50 €.</p>
+</section>
+
+<section id="biryani">
+  <div class="section-head reveal"><h2>Les Biryanis & Kottu Roti</h2><span class="eyebrow">Plats complets, riz basmati safrané</span></div>
+  <div class="card-grid reveal">
+    <div class="card"><div class="top"><h3>Briyani Poulet</h3><span class="price">16,90 €</span></div></div>
+    <div class="card"><div class="top"><h3>Briyani Bœuf</h3><span class="price">17,90 €</span></div></div>
+    <div class="card"><div class="top"><h3>Briyani Agneau</h3><span class="price">18,50 €</span></div></div>
+    <div class="card"><div class="top"><h3>Briyani Crevette</h3><span class="price">18,50 €</span></div></div>
+    <div class="card"><div class="top"><h3>Briyani Légume</h3><span class="price">14,90 €</span></div></div>
+    <div class="card"><div class="top"><h3>Briyani Canard</h3><span class="price">19,90 €</span></div></div>
+  </div>
+  <p class="note">Accompagnement : raita et chutney d'aubergines.</p>
+
+  <div class="subhead">Kottu Roti</div>
+  <p style="font-size:0.87rem;color:#5c4c38;margin-bottom:1rem;">Plat sri-lankais sauté avec morceaux de roti, légumes frais, œufs et votre choix de poulet, bœuf ou fruits de mer.</p>
+  <div class="reveal">
+    <div class="dish-row"><div class="name">Poulet</div><span class="price">16,90 €</span></div>
+    <div class="dish-row"><div class="name">Bœuf</div><span class="price">17,90 €</span></div>
+    <div class="dish-row"><div class="name">Agneau</div><span class="price">18,90 €</span></div>
+    <div class="dish-row"><div class="name">Crevettes</div><span class="price">17,90 €</span></div>
+  </div>
+</section>
+
+<section id="desserts">
+  <div class="section-head reveal"><h2>Desserts & Boissons</h2><span class="eyebrow">Sucré & spécialités</span></div>
+  <div class="card-grid reveal">
+    <div class="card"><div class="top"><h3>Kesari</h3><span class="price">5,00 €</span></div><p>Gâteau de semoule, noix de coco.</p></div>
+    <div class="card"><div class="top"><h3>Gulab Jamun</h3><span class="price">5,50 €</span></div><p>Beignet au lait, sirop de safran.</p></div>
+    <div class="card"><div class="top"><h3>Bondi Laddu</h3><span class="price">5,90 €</span></div><p>Végétalien et sans gluten.</p></div>
+    <div class="card"><div class="top"><h3>Coupe Café Madras</h3><span class="price">7,50 €</span></div><p>3 boules de glace, vanille, coco, mangue, sirop de chocolat, chantilly.</p></div>
+    <div class="card"><div class="top"><h3>Dame Blanche</h3><span class="price">7,50 €</span></div></div>
+    <div class="card"><div class="top"><h3>Kulfi Mangue / Pistache</h3><span class="price">7,50 €</span></div><p>Glace maison.</p></div>
+    <div class="card"><div class="top"><h3>Délice de Café Madras</h3><span class="price">8,90 €</span></div><p>Tarte avec halwa de noix de coco et chantilly.</p></div>
+    <div class="card"><div class="top"><h3>Crème Brûlée Maison</h3><span class="price">6,90 €</span></div></div>
+    <div class="card"><div class="top"><h3>Café Gourmand</h3><span class="price">9,90 €</span></div></div>
+  </div>
+
+  <div class="subhead">Boissons</div>
+  <div class="reveal">
+    <div class="dish-row"><div class="name">Lassi (Mangue/Banane/Rose)</div><span class="price">5,50 €</span></div>
+    <div class="dish-row"><div class="name">Lassi Avocat</div><span class="price">7,50 €</span></div>
+    <div class="dish-row"><div class="name">Café Madras<span class="desc">Café spécial des Tamouls</span></div><span class="price">3,50 €</span></div>
+    <div class="dish-row"><div class="name">Thé Maison (Massala Tea)</div><span class="price">4,50 €</span></div>
+    <div class="dish-row"><div class="name">Bières (Guinness, Lion, Kingfisher, Cobra, Stout)</div><span class="price">7,00 €</span></div>
+    <div class="dish-row"><div class="name">Bières (Leffe, Heineken, Desperados)</div><span class="price">6,00 €</span></div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div><h3>Café Madras</h3><p>Restaurant franco-indien et tamoul à Ugine, 777 Route d'Annecy.</p></div>
+    <div class="foot-links"><span class="eyebrow">Explorer</span><a href="#entrees">Entrées</a><a href="#plats">Plats</a><a href="#biryani">Biryanis</a></div>
+    <div class="foot-links"><span class="eyebrow">Contact</span><a href="tel:0652568101">06 52 56 81 01</a><a href="https://www.google.com/maps/search/?api=1&query=777+Route+d%27Annecy+73400+Ugine" target="_blank" rel="noopener">Itinéraire</a></div>
+  </div>
+  <div class="bottom-line"><span>Café Madras — Ugine</span><span>Ouvert tous les jours</span></div>
+</footer>
+<script>const obs=new IntersectionObserver((e)=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in');});},{threshold:0.1});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));</script>
+</body>
+</html>
